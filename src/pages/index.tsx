@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { graphql, StaticQuery } from "gatsby";
+import { Counter } from "../components/Counter";
 
 const SingleColumn = styled.div`
     margin: 3rem auto;
@@ -37,6 +38,7 @@ export const query = graphql`
 export default ({ data }) => (
     <SingleColumn>
         <h1>{data.site.siteMetadata.title}</h1>
+        <Counter />
         {data.allContentfulLesson.edges.map(({ node: { title, modules } }) => (
             <div>
                 <h2>{title}</h2>
